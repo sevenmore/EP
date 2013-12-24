@@ -15,7 +15,16 @@ class Verifylogin extends CI_Controller {
 			$email=$this->input->post('email');
 			$this->session->set_userdata('email', $email);
 			$this->session->set_userdata('logged_in', 1);
-			redirect('main', 'refresh');
+			$role=$this->users->get_role($email);
+			$this->session->set_userdata('role', $role);
+			
+			if($role==2){
+				redirect('adm', 'refresh');
+			}elseif($role==1){
+				redirect('prodaja', 'refresh');
+			}else{
+				redirect('main', 'refresh');
+			}
 		}
 		else{
 			$this->load->view('login');

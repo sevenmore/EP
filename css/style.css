@@ -7,6 +7,59 @@ body {
   	background-repeat: repeat;
   	height: 100%;
 }
+p {
+  margin: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 20px;
+  color: inherit;
+
+}
+
+h1,
+h2,
+h3 {
+  line-height: 40px;
+}
+
+h1 {
+  font-size: 38.5px;
+}
+
+h2 {
+  font-size: 31.5px;
+}
+
+h3 {
+  font-size: 24.5px;
+}
+
+h4 {
+  font-size: 17.5px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 11.9px;
+}
+
+
+
+
+
+
 
 #login-box {
 	float: center;
@@ -161,6 +214,7 @@ body {
 
 
 
+
 /*MENU*/
 .logo {
 	margin-left: 20px;
@@ -171,7 +225,8 @@ nav {
 	left: 0%;
 	top: 0%;
 	height: 53px;
-	width: 100%;
+	/*width: 100%;*/
+	width: 1366px;
 	padding-bottom: 20px;
 	box-shadow: 1px 1px 3px #888888;
 	z-index: 5;
@@ -282,6 +337,7 @@ nav ul ul ul {
 	position: relative;
 	top: -25px;
 	left: 1130px;
+	width: 236px;
 }
 .login {
 	cursor: pointer;
@@ -344,4 +400,89 @@ nav ul ul ul {
 	left: 670px;
 	border-radius: 3px;
 	border: 1px solid rgba(0,0,0,0.3);
+}
+
+
+
+
+
+/*MY PROFILE*/
+#myprofile {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;	
+	float: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	width: 400px;
+	height: 400px;
+	z-index:-1;
+}
+#myprofile h2 {
+	text-align: center;
+}
+.edit-profile {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+	position: relative;
+	top: 40px;
+	left: 88px;
+	background-color: #efefef;
+	
+	background-image: -moz-linear-gradient(top,#efefef,#888888);
+  	background-image: -webkit-linear-gradient(top,#efefef,#888888);
+  	background-image: -o-linear-gradient(top,#efefef,#888888);
+  	background-image: linear-gradient(to bottom,#efefef,#888888);
+  	background-repeat: repeat-x;
+  	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.edit-profile:hover {
+	color: #000000;
+  	background: #888888;
+}
+
+.edit-password {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+	position: relative;
+	top: 40px;
+	left: 100px;
+	background-color: #efefef;
+	
+	background-image: -moz-linear-gradient(top,#efefef,#888888);
+  	background-image: -webkit-linear-gradient(top,#efefef,#888888);
+  	background-image: -o-linear-gradient(top,#efefef,#888888);
+  	background-image: linear-gradient(to bottom,#efefef,#888888);
+  	background-repeat: repeat-x;
+  	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.edit-password:hover {
+	color: #000000;
+  	background: #888888;
+}
+#myprofile img {
+	position: relative;
+	left: 15px;
+	top: -15px;
+	margin: 10px 10px 10px 10px;
+}
+.profile {
+	position: relative;
+	left: 115px;
+	top: -80px;
 }
