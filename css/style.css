@@ -371,7 +371,7 @@ nav ul ul ul {
 	text-align: center;
 	color: #ffffff;
 	position: relative;
-	left: 900px;
+	left: 950px;
 	background-color: #FF6600;
 	
 	/*background-image: -moz-linear-gradient(top,#FF9900,#FF6600);
@@ -485,4 +485,232 @@ nav ul ul ul {
 	position: relative;
 	left: 115px;
 	top: -80px;
+}
+
+
+
+
+
+/*EDIT PROFILE*/
+#edit-profile {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	float: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	width: 400px;
+	
+	z-index:-1;
+}
+#edit-profile h2{
+	text-align: center;
+}
+.edit-oklep {
+	width: 218px;
+	margin: 0px 0px 5px 0px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 3px;
+	box-shadow: 1px 1px 1px #cccccc;
+}
+.ovitek {
+	margin: 20px 0px 0px 90px;
+	width: 219px;
+}
+.save {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin-top: 60px;
+	margin-left: -22px;
+	margin-bottom: 20px;
+	background-color: #efefef;
+	
+	background-image: -moz-linear-gradient(top,#efefef,#888888);
+  	background-image: -webkit-linear-gradient(top,#efefef,#888888);
+  	background-image: -o-linear-gradient(top,#efefef,#888888);
+  	background-image: linear-gradient(to bottom,#efefef,#888888);
+  	background-repeat: repeat-x;
+  	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.save:hover {
+	color: #000000;
+  	background: #888888;
+}
+
+
+
+
+
+/*CHANGE PASSWORD*/
+#edit-password {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	float: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	width: 400px;
+	z-index:-1;
+}
+#edit-password h2{
+	text-align: center;
+}
+.ovitek2 {
+	margin: 50px 0px 0px 90px;
+	width: 219px;
+}
+.save2 {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin-top: 80px;
+	margin-left: -22px;
+	margin-bottom: 20px;
+	background-color: #efefef;
+	
+	background-image: -moz-linear-gradient(top,#efefef,#888888);
+  	background-image: -webkit-linear-gradient(top,#efefef,#888888);
+  	background-image: -o-linear-gradient(top,#efefef,#888888);
+  	background-image: linear-gradient(to bottom,#efefef,#888888);
+  	background-repeat: repeat-x;
+  	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.save2:hover {
+	color: #000000;
+  	background: #888888;
+}
+
+
+
+
+/*ABOUT US*/
+#aboutus,
+#aboutus-offline {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	float: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	width: 600px;
+	height: 450px;
+	z-index:-1;
+}
+#aboutus h2,
+#aboutus-offline h2{
+	text-align: center;
+	margin-bottom: 50px;
+}
+#aboutus p,
+#aboutus-offline p{
+	margin: 0px 20px 0px 20px;
+}
+
+
+
+
+/*CONTACT*/
+#contacts {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	float: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	width: 600px;
+	height: 450px;
+	z-index:-1;
+}
+#contacts h2{
+	text-align: center;
+	margin-bottom: 50px;
+}
+#contacts p{
+	margin: 0px 0px 0px 10px;
+}
+.control-label {
+	float: left;
+	width: 160px;
+	padding-top: 5px;
+	text-align: right;
+}
+.polja {
+	width: 200px;
+	padding: 4px 6px 4px 6px;
+	margin: 3px 0px 5px 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 3px;
+  	box-shadow: 1px 1px 1px #cccccc;
+  	resize: none;
+}
+.polja-date {
+	width: 200px;
+	padding: 2px 6px 2px 6px;
+	margin: 3px 0px 5px 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 3px;
+  	box-shadow: 1px 1px 1px #cccccc;
+}
+.sendmail {
+	position: relative;
+	left: 200px;
+	top: -188px;
+}
+.send-button {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+	position: relative;
+	left: 160px;
+	top: 5px;
+	background-color: #efefef;
+	
+	background-image: -moz-linear-gradient(top,#efefef,#888888);
+  	background-image: -webkit-linear-gradient(top,#efefef,#888888);
+  	background-image: -o-linear-gradient(top,#efefef,#888888);
+  	background-image: linear-gradient(to bottom,#efefef,#888888);
+  	background-repeat: repeat-x;
+  	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.send-button:hover {
+	color: #000000;
+  	background: #888888;
+}
+.error-send{
+	position: relative;
+	left: 165px;
 }

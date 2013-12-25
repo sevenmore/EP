@@ -1,13 +1,33 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Verifysignup extends CI_Controller {
-
-	function __construct(){
+class Editprofile extends CI_Controller {
+	 
+	function __construct() {
 		parent::__construct();
 		$this->load->model('users');
+    } 
+	 
+	public function index(){
+		if($this->session->userdata('logged_in')) {
+			$attributes=$this->users->getAll($this->session->userdata('user_id'));
+			$data['name']=$this->session->userdata('name');
+			$data['role']=$this->session->userdata('role');
+			$data['cart']=2;
+			$data['name']=$attributes->name;
+			$data['surname']=$attributes->surname;
+			$data['address']=$attributes->address;
+			$data['city']=$attributes->city;
+			$data['post']=$attributes->post;
+			$data['email']=$attributes->email;
+			$data['phone']=$attributes->phone;
+		
+			$this->load->view('editprofile',$data);
+		}else{
+			redirect('index','refresh');
+		}
 	}
-
-	function index(){
+	
+	function save(){	
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|xss_clean|callback_check_name');
 		$this->form_validation->set_rules('surname', 'Surname', 'trim|htmlspecialchars|stripslashes|xss_clean|callback_check_surname');
@@ -16,9 +36,9 @@ class Verifysignup extends CI_Controller {
 		$this->form_validation->set_rules('post', 'Post', 'trim|htmlspecialchars|stripslashes|xss_clean|callback_check_post');
 		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|xss_clean|callback_check_email|callback_check_email_available');
 		$this->form_validation->set_rules('phone', 'Phone', 'trim|htmlspecialchars|stripslashes|xss_clean|callback_check_phone');
-		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|xss_clean|callback_check_password');
-		$this->form_validation->set_rules('repassword', 'Re-Password', 'trim|htmlspecialchars|stripslashes|xss_clean|callback_check_repassword');
+		
 		if ($this->form_validation->run() == TRUE){
+			$user_id=$this->session->userdata('user_id');
 			$name=$this->input->post('name');
 			$surname=$this->input->post('surname');
 			$address=$this->input->post('address');
@@ -26,7 +46,6 @@ class Verifysignup extends CI_Controller {
 			$post=$this->input->post('post');
 			$email=$this->input->post('email');
 			$phone=$this->input->post('phone');
-			$password=sha1($this->input->post('password'));
 				
 			$userdata=array(
 				'name'=>$name,
@@ -35,19 +54,27 @@ class Verifysignup extends CI_Controller {
 				'city'=>$city,
 				'post'=>$post,
 				'email'=>$email,
-				'phone'=>$phone,
-				'password'=>$password,
-				'role'=>0,
-				'active'=>1
+				'phone'=>$phone
 				);
-			$this->db->insert('users', $userdata);
-			//$this->load->view('main');
-			$this->session->set_userdata('logged_in', 1);
-			$this->session->set_userdata('email', $email);
-			redirect('main', 'refresh');
+				
+			$this->db->where('user_id', $user_id);
+			$this->db->update('users', $userdata);
+			redirect('myprofile', 'refresh');
 		}
 		else{
-			$this->load->view('signup');
+			$attributes=$this->users->getAll($this->session->userdata('user_id'));
+			$data['name']=$this->session->userdata('name');
+			$data['role']=$this->session->userdata('role');
+			$data['cart']=2;
+			$data['name']=$attributes->name;
+			$data['surname']=$attributes->surname;
+			$data['address']=$attributes->address;
+			$data['city']=$attributes->city;
+			$data['post']=$attributes->post;
+			$data['email']=$attributes->email;
+			$data['phone']=$attributes->phone;
+			
+			$this->load->view('editprofile',$data);
 		}
 	}
 	
@@ -113,8 +140,8 @@ class Verifysignup extends CI_Controller {
 	
 	function check_email_available(){
 		$email = $this->input->post('email');
-		//query the database
-		$result = $this->users->email($email);
+		$user_id=$this->session->userdata('user_id');
+		$result = $this->users->self_email($email,$user_id);
 		if($result == 0){
 			return TRUE;
 		}else{
@@ -132,26 +159,4 @@ class Verifysignup extends CI_Controller {
 			return FALSE;
 		}
 	}
-	
-	function check_password(){
-		$password = $this->input->post('password');
-		if(preg_match("/^[a-zA-Z0-9]{3,20}$/",$password)){
-			return TRUE;
-		}else{
-			$this->form_validation->set_message('check_password', 'Invalid password!');
-			return FALSE;
-		}
-	}
-	
-	function check_repassword(){
-		$password = $this->input->post('password');
-		$repassword = $this->input->post('repassword');
-		if(preg_match("/^[a-zA-Z0-9]{3,20}$/",$repassword) || $password==$repassword){
-			return TRUE;
-		}else{
-			$this->form_validation->set_message('check_repassword', 'Passwords do not match!');
-			return FALSE;
-		}
-	}	
 }
-?>

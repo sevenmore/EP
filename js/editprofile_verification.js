@@ -96,45 +96,6 @@ function checkPhone() {
 	}
 	return true;
 }
-pass=""
-function checkPassword() {
-	var x=document.getElementById("password");
-	var y=document.getElementById("oklep-password");
-    var reg=/^[a-zA-Z0-9]{3,20}$/;
-	var result=reg.test(x.value);
-	
-	if(!result){
-		x.value="";
-		y.style.boxShadow="0px 0px 6px red";
-		y.style.border="1px solid #aa7777";
-		return false;
-	}
-	pass=x.value;
-	return true;
-}
-function checkRePassword() {
-	var x=document.getElementById("re-password");
-	var x2=document.getElementById("password");
-	var y=document.getElementById("oklep-repassword");
-    var reg=/^[a-zA-Z0-9]{3,20}$/;
-	var result=reg.test(x.value);
-	
-	if(x.value!= pass){
-		x.value="";
-		x2.value="";
-		y.style.boxShadow="0px 0px 6px red";
-		y.style.border="1px solid #aa7777";
-		return false;
-	}
-	
-	if(!result){
-		x.value="";
-		y.style.boxShadow="0px 0px 6px red";
-		y.style.border="1px solid #aa7777";
-		return false;
-	}
-	return true;
-}
 function select(kos) {
     var y=document.getElementById(kos);
 	y.style.boxShadow="0px 0px 6px blue";
@@ -146,8 +107,8 @@ function reverse(kos){
 	y.style.boxShadow="1px 1px 1px #cccccc";
 }
 function validation(){
-	if(checkName() && checkSurname() && checkAddress() && checkCity() && checkPost() && checkEmail() && checkPhone() && checkPassword() && checkRePassword()){
-		$("#form-signup").submit();
+	if(checkName() && checkSurname() && checkAddress() && checkCity() && checkPost() && checkEmail() && checkPhone()){
+		$("#forma-editprofile").submit();
 	}else{
 		checkName();
 		checkSurname();
@@ -156,8 +117,6 @@ function validation(){
 		checkPost();
 		checkEmail();
 		checkPhone();
-		checkPassword();
-		checkRePassword();
 		
 		if (!document.getElementById('napaka')) {
 			var para=document.createElement("label");
@@ -166,26 +125,24 @@ function validation(){
 			para.appendChild(node);
 			para.style.color="red";
 
-			var element=document.getElementById("form-signup");
-			var child=document.getElementById("signup");
+			var element=document.getElementById("forma-editprofile");
+			var child=document.getElementById("save");
 			element.insertBefore(para,child);
 		}
 	}
 }
 
-name1=document.getElementById("name");
+name2=document.getElementById("name");
 surname=document.getElementById("surname");
 address=document.getElementById("address");
 city=document.getElementById("city");
 post=document.getElementById("post");
 email=document.getElementById("email");
 phone=document.getElementById("phone");
-password=document.getElementById("password");
-repassword=document.getElementById("re-password");
-signup=document.getElementById("signup");
+save=document.getElementById("save");
 
-name1.addEventListener("focus",function(){select("oklep-name")},false);
-name1.addEventListener("blur",function(){reverse("oklep-name")},false);
+name2.addEventListener("focus",function(){select("oklep-name")},false);
+name2.addEventListener("blur",function(){reverse("oklep-name")},false);
 
 surname.addEventListener("focus",function(){select("oklep-surname")},false);
 surname.addEventListener("blur",function(){reverse("oklep-surname")},false);
@@ -205,10 +162,4 @@ email.addEventListener("blur",function(){reverse("oklep-email")},false);
 phone.addEventListener("focus",function(){select("oklep-phone")},false);
 phone.addEventListener("blur",function(){reverse("oklep-phone")},false);
 
-password.addEventListener("focus",function(){select("oklep-password")},false);
-password.addEventListener("blur",function(){reverse("oklep-password")},false);
-
-repassword.addEventListener("focus",function(){select("oklep-repassword")},false);
-repassword.addEventListener("blur",function(){reverse("oklep-repassword")},false);
-
-signup.addEventListener("click",validation,false);
+save.addEventListener("click",validation,false);
