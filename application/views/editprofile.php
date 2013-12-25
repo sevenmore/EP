@@ -17,7 +17,6 @@
 			<?php if($role == 2){ ?>
 			<ul id="menu">
 				<li><?php echo anchor('adm', 'Home'); ?></li>
-				<li><?php echo anchor('adduser', 'Add user'); ?></li>
 				<li><?php echo anchor('editusers', 'Edit users'); ?></li>
 			</ul>
 			<?php }elseif($role == 1){ ?>
@@ -25,7 +24,6 @@
 				<li><?php echo anchor('prodaja', 'Home'); ?></li>
 				<li><?php echo anchor('orders', 'Orders'); ?></li>
 				<li><?php echo anchor('editshop', 'Edit shop'); ?></li>
-				<li><?php echo anchor('addseller', 'Add seller'); ?></li>
 				<li><?php echo anchor('editsellers', 'Edit sellers'); ?></li>
 			</ul>
 			<?php }else{ ?>

@@ -16,7 +16,7 @@
 	<body>
 		<nav>
 			<ul id="menu">
-				<li><?php echo anchor('adduser', 'Add user'); ?></li>
+				<li><?php echo anchor('adm', 'Home'); ?></li>
 				<li><?php echo anchor('editusers', 'Edit users'); ?></li>
 			</ul>
 			

@@ -10,9 +10,9 @@
 	<body>
 		<nav>
 			<ul id="menu">
+				<li><?php echo anchor('prodaja', 'Home'); ?></li>
 				<li><?php echo anchor('orders', 'Orders'); ?></li>
 				<li><?php echo anchor('editshop', 'Edit shop'); ?></li>
-				<li><?php echo anchor('addseller', 'Add seller'); ?></li>
 				<li><?php echo anchor('editsellers', 'Edit sellers'); ?></li>
 			</ul>
 			

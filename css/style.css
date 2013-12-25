@@ -714,3 +714,208 @@ nav ul ul ul {
 	position: relative;
 	left: 165px;
 }
+
+
+
+
+
+/*ADD SELLER*/
+#addseller {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;	
+	float: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	width: 450px;
+	z-index:-1;
+}
+#addseller h2 {
+	text-align: center;
+}
+.ovitek-seller{
+	margin-bottom: 100px;
+}
+.save-seller {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+	position: relative;
+	left: 190px;
+	top: 80px;
+	background-color: #efefef;
+	
+	background-image: -moz-linear-gradient(top,#efefef,#888888);
+  	background-image: -webkit-linear-gradient(top,#efefef,#888888);
+  	background-image: -o-linear-gradient(top,#efefef,#888888);
+  	background-image: linear-gradient(to bottom,#efefef,#888888);
+  	background-repeat: repeat-x;
+  	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.save-seller:hover {
+	color: #000000;
+  	background: #888888;
+}
+.error-seller{
+	position: relative;
+	left: 165px;
+}
+
+
+
+
+/*ADD SELLER*/
+#addseller {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;	
+	float: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	width: 450px;
+	z-index:-1;
+}
+#addseller h2 {
+	text-align: center;
+}
+.ovitek-seller{
+	margin-bottom: 100px;
+}
+.save-seller {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+	position: relative;
+	left: 190px;
+	top: 80px;
+	background-color: #efefef;
+	
+	background-image: -moz-linear-gradient(top,#efefef,#888888);
+  	background-image: -webkit-linear-gradient(top,#efefef,#888888);
+  	background-image: -o-linear-gradient(top,#efefef,#888888);
+  	background-image: linear-gradient(to bottom,#efefef,#888888);
+  	background-repeat: repeat-x;
+  	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.save-seller:hover {
+	color: #000000;
+  	background: #888888;
+}
+.error-seller{
+	position: relative;
+	left: 165px;
+}
+
+
+
+
+
+/*EDIT SELLERS*/
+#edit-sellers {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;	
+	float: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	width: 500px;
+	z-index:-1;
+	padding-bottom: 30px;
+}
+#edit-sellers  h2 {
+	text-align: center;
+}
+.oklep-tabela {
+	margin: 20px 0px 10px 25px;
+}
+.big {
+	font-weight: bold;
+}
+.active {
+	background-color: #dff0d8;
+}
+.non {
+	background-color: #f2dede;
+}
+caption {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+table {
+	font-weight: bold;
+	margin: 10px 10px 10px 10px;
+	border-collapse:collapse;
+	width: 450px;
+}
+table, th, td > thead{
+	font-weight: normal;
+	text-align: left;
+	padding: 5px 5px 5px 5px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+td {
+	font-weight: normal;
+	text-align: left;
+	padding: 8px 8px 8px 5px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.action {
+	height: 20px;
+	width: 20px;
+	padding: 0px 0px 0px 0px;
+	background: #efefef;
+}
+.edit-user {
+	cursor: pointer;
+	margin: 3px 1px 0px 1px;
+	padding: 1px 3px 1px 3px;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 3px;
+	box-shadow: 2px 2px 5px #888888;
+}
+.edit-user:hover{
+	background: #FF6600;
+}
+.add-user{
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin-left: -50px;
+	margin-top: 20px;
+	background-color: #FF6600;
+	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.add-user:hover {
+	color: #fff;
+  	background: #333333;
+}
+	
+}

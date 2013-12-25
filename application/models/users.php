@@ -1,12 +1,30 @@
 <?php
 Class Users extends CI_Model {
 	function getAll($user_id){
-		$this->db->select('user_id, name, surname, address, city, post, email, phone');
+		$this->db->select('user_id, name, surname, address, city, post, email, phone, emso');
 		$this->db->from('users');
 		$this->db->where('user_id', $user_id);
 		
 		$query=$this->db->get();
 		return $query->row();
+	}
+	
+	function getSellers(){
+		$this->db->select('user_id, name, surname, active');
+		$this->db->from('users');
+		$this->db->where('role', 1);
+		
+		$query=$this->db->get();
+		return $query->result();
+	}
+	
+	function getUsers(){
+		$this->db->select('user_id, name, surname, active');
+		$this->db->from('users');
+		$this->db->where('role', 0);
+		
+		$query=$this->db->get();
+		return $query->result();
 	}
 	
 	function email($email) {
@@ -64,5 +82,22 @@ Class Users extends CI_Model {
 		$query=$this->db->get();
 		return $query->row()->password;
     }
+	
+	function delete_user($user_id){
+		$this->db->where('user_id', $user_id);
+	    $this->db->delete('users');
+	}
+	
+	function activate_user($user_id){
+		$this->db->where('user_id', $user_id);
+		$this->db->set('active', 1);
+		$this->db->update('users'); 
+	}
+	
+	function deactivate_user($user_id){
+		$this->db->where('user_id', $user_id);
+		$this->db->set('active', 0);
+		$this->db->update('users'); 
+	}
 } 
 ?>
