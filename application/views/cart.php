@@ -34,10 +34,10 @@
 		</nav>
 		
 		<section id="shop">
-			<h2>Shop</h2>
+			<h2>Cart content</h2>
 			<?php
-				if($items){
-					foreach($items as $row){
+				if($cart_content){
+					foreach($cart_content as $row){
 						if($row->active == 1){
 							echo '<div class="items">';
 							echo '<img src='.$row->photo.' alt='.$row->name.' width="150" height="150">';
@@ -45,8 +45,8 @@
 							echo '<p>Category: '.$row->category.'</p>';
 							echo '<p>Price: '.$row->price.' &euro;</p>';
 							
-							echo form_open("shop/add");
-							echo '<input type="submit" class="addcart" title="Add to cart" value="Add to cart"/>';
+							echo form_open("cart/remove");
+							echo '<input type="submit" class="addcart" title="Remove from cart" value="Remove"/>';
 							echo '<input type="hidden" hidden" name="item_id" value="'.$row->item_id.'" />';
 							echo form_close();
 									

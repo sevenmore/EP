@@ -5,6 +5,7 @@ class Myprofile extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('users');
+		$this->load->model('cart_items');
     } 
 	 
 	public function index(){
@@ -18,7 +19,8 @@ class Myprofile extends CI_Controller {
 			$data['email']=$attributes->email;
 			$data['phone']=$attributes->phone;
 			$data['role']=$this->session->userdata('role');
-			$data['cart']=2;
+			$data['cart_items']=$this->cart_items->get_number_of_items($this->session->userdata('cart_id'));
+			$data['cart_sum']=$this->cart_items->get_sum($this->session->userdata('cart_id'));
 			
 			$this->load->view('myprofile',$data);
 		}else{

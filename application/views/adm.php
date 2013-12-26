@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>SuperShop</title>
+		<title>SuperShop Admin</title>
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<meta name="description" content="" />
 		<meta name="author" content="Boco" />
@@ -25,9 +25,5 @@
 				<?php echo anchor('main/logout', 'Logout', 'class="login"'); ?>
 			</div>	
 		</nav>
-						
-		<footer class="space-main">
-			<p>&copy; Copyright  by Boco</p>
-		</footer>
 	</body>
 </html>

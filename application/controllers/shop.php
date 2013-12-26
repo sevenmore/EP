@@ -9,14 +9,25 @@ class Shop extends CI_Controller {
     }
 	public function index(){
 		$data['items']=$this->items->getItems();
-		$data['cart']=2;
 		$data['name']=$this->session->userdata('name');
+		$data['role']=$this->session->userdata('role');
+		$data['cart_items']=$this->cart_items->get_number_of_items($this->session->userdata('cart_id'));
+		$data['cart_sum']=$this->cart_items->get_sum($this->session->userdata('cart_id'));
 		$this->load->view('shop',$data);
 	}
 	
-	function save(){
+	function add(){
 		$item_id = $this->input->post('item_id');
-		$this->cart_items->add_item($item_id);
+		$cart_id = $this->session->userdata('cart_id');
+		
+		$already=$this->cart_items->already_in($cart_id, $item_id);
+		if(!$already){
+			$userdata=array(
+				'cart_id'=>$cart_id,
+				'item_id'=>$item_id
+				);
+			$this->db->insert('cart_items', $userdata);
+		}
 		redirect('shop','refresh');
 	}
 }

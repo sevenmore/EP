@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>SuperShop</title>
+		<title>SuperShop Shop</title>
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<meta name="description" content="" />
 		<meta name="author" content="Boco" />
@@ -39,13 +39,6 @@
 					}
 				}
 			?>
-		</section>
-		
-		<section id="categories">
-			<h4>Categories</h4>
-			<?php echo anchor('login', 'Running').'<br/>'; ?>
-			<?php echo anchor('login', 'Summer').'<br/>'; ?>
-			<?php echo anchor('login', 'Casual'); ?>
 		</section>		
 	</body>
 </html>

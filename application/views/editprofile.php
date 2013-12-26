@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>EasyDo Edit profile</title>
+		<title>SuperShop Edit profile</title>
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<meta name="description" content="" />
 		<meta name="author" content="Boco" />
@@ -30,7 +30,7 @@
 			<ul id="menu">
 				<li><?php echo anchor('main', 'Home'); ?></li>
 				<li><?php echo anchor('shop', 'Shop'); ?></li>
-				<li><?php echo anchor('cart', "Cart (".$cart.")"); ?></li>
+				<li><?php echo anchor('cart', "Cart (".$cart_items.")"); ?></li>
 				<li><?php echo anchor('aboutus', 'About us'); ?></li>
 				<li><?php echo anchor('contact', 'Contact'); ?></li>
 			</ul>
@@ -100,5 +100,14 @@
 			<?php form_close(); ?>				
 		</section>
 		<script type="text/javascript" src="/js/editprofile_verification.js"></script>
+		
+		<?php if($role == 0){ ?>
+		<section id="mini-cart">
+			<h4>Cart</h4>
+			<p>Total: <?php echo $cart_sum->price;?> &euro;</p>
+			<?php echo anchor('cart', 'Cart'); ?>
+			<?php echo anchor('checkout', 'Check out'); ?>
+		</section>
+		<?php } ?>
 	</body>
 </html>

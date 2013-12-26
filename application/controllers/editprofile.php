@@ -5,6 +5,7 @@ class Editprofile extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('users');
+		$this->load->model('cart_items');
     } 
 	 
 	public function index(){
@@ -12,7 +13,8 @@ class Editprofile extends CI_Controller {
 			$attributes=$this->users->getAll($this->session->userdata('user_id'));
 			$data['name']=$this->session->userdata('name');
 			$data['role']=$this->session->userdata('role');
-			$data['cart']=2;
+			$data['cart_items']=$this->cart_items->get_number_of_items($this->session->userdata('cart_id'));
+			$data['cart_sum']=$this->cart_items->get_sum($this->session->userdata('cart_id'));
 			$data['name']=$attributes->name;
 			$data['surname']=$attributes->surname;
 			$data['address']=$attributes->address;

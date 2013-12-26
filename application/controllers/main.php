@@ -6,6 +6,8 @@ class Main extends CI_Controller {
 		parent::__construct();
 		$this->load->model('users');
 		$this->load->model('items');
+		$this->load->model('carts');
+		$this->load->model('cart_items');
     } 
 	 
 	public function index(){
@@ -14,8 +16,21 @@ class Main extends CI_Controller {
 			$name=$this->users->get_attributes($this->session->userdata('email'))->name;
 			$this->session->set_userdata('user_id', $user_id);
 			$this->session->set_userdata('name', $name);
-			$data['cart']=2;
+			$cart=$this->carts->get_current_cart($this->session->userdata('user_id'));
+			if(!$cart){
+				$userdata=array(
+					'user_id'=>$this->session->userdata('user_id'),
+					'status'=>'open'
+				);
+				$this->db->insert('carts', $userdata);
+			}
+			$cart_id=$this->carts->get_current_cart($this->session->userdata('user_id'))->cart_id;
+			$this->session->set_userdata('cart_id', $cart_id);
+			$data['cart']=$this->session->userdata('cart_id');
 			$data['name']=$this->session->userdata('name');
+			$data['role']=$this->session->userdata('role');
+			$data['cart_items']=$this->cart_items->get_number_of_items($this->session->userdata('cart_id'));
+			$data['cart_sum']=$this->cart_items->get_sum($this->session->userdata('cart_id'));
 			$this->load->view('main',$data);
 		}else{
 			redirect('index','refresh');

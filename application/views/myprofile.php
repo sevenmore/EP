@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>EasyDo My profile</title>
+		<title>SuperShop My profile</title>
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<link href="/photos/favicon2.ico" rel="icon" type="image/x-icon" />
 		<meta name="description" content="" />
@@ -31,7 +31,7 @@
 			<ul id="menu">
 				<li><?php echo anchor('main', 'Home'); ?></li>
 				<li><?php echo anchor('shop', 'Shop'); ?></li>
-				<li><?php echo anchor('cart', "Cart (".$cart.")"); ?></li>
+				<li><?php echo anchor('cart', "Cart (".$cart_items.")"); ?></li>
 				<li><?php echo anchor('aboutus', 'About us'); ?></li>
 				<li><?php echo anchor('contact', 'Contact'); ?></li>
 			</ul>
@@ -65,5 +65,14 @@
 			<?php echo anchor('editprofile', 'Edit','class="edit-profile"'); ?>
 			<?php echo anchor('changepassword', 'Change password','class="edit-password"'); ?>					
 		</section>
+		
+		<?php if($role == 0){ ?>
+		<section id="mini-cart">
+			<h4>Cart</h4>
+			<p>Total: <?php echo $cart_sum->price;?> &euro;</p>
+			<?php echo anchor('cart', 'Cart'); ?>
+			<?php echo anchor('checkout', 'Check out'); ?>
+		</section>
+		<?php } ?>
 	</body>
 </html>

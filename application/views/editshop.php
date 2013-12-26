@@ -70,14 +70,6 @@
 					}
 				}
 			?>
-		</section>
-		
-		<section id="categories">
-			<h4>Categories</h4>
-			<?php echo anchor('login', 'Running').'<br/>'; ?>
-			<?php echo anchor('login', 'Summer').'<br/>'; ?>
-			<?php echo anchor('login', 'Casual'); ?>
-		</section>
-		
+		</section>		
 	</body>
 </html>
