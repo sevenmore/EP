@@ -60,7 +60,7 @@ h6 {
 
 
 
-
+/*LOGIN & SIGNUP*/
 #login-box {
 	float: center;
 	margin-left: auto;
@@ -406,6 +406,202 @@ nav ul ul ul {
 
 
 
+/*SHOP*/
+#shop {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	position: relative;
+	left: 350px;
+	margin-top: 80px;
+	width: 600px;
+}
+#shop h2 {
+	text-align: center;
+}
+.items{
+	border: 1px solid rgba(0,0,0,0.5);
+	border-radius: 3px;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	height: 150px;
+}
+.items img {
+	float: left;
+}
+.items h4 {
+	padding-left: 200px;
+}
+.items p {
+	padding-left: 200px;
+}
+.addcart {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	background-color: #FF6600;
+  	text-decoration: none;
+	
+	position: relative;
+	top: 24px;
+	left: 316px;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+	box-shadow: 1px 1px 3px #888888;
+  	padding: 6px 12px 6px 12px;
+}
+.edititem {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	background-color: #FF6600;
+  	text-decoration: none;
+	
+	position: relative;
+	top: 24px;
+	left: 150px;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+	box-shadow: 1px 1px 3px #888888;
+  	padding: 6px 12px 6px 12px;
+}
+.deleteitem {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	background-color: #FF6600;
+  	text-decoration: none;
+	
+	position: relative;
+	top: -10px;
+	left: 240px;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+	box-shadow: 1px 1px 3px #888888;
+  	padding: 6px 12px 6px 12px;
+}
+.activeitem {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	background-color: #FF6600;
+  	text-decoration: none;
+	
+	position: relative;
+	top: -44px;
+	left: 465px;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+	box-shadow: 1px 1px 3px #888888;
+  	padding: 6px 12px 6px 12px;
+}
+.addcart:hover,
+.edititem:hover,
+.deleteitem:hover,
+.activeitem:hover {
+	color: #fff;
+  	background: #333333;
+}
+
+
+
+
+
+
+/*MINI CART*/
+#mini-cart{
+	position: absolute;
+	top: 90px;
+	right: 15px;
+	width: 132px;
+	padding: 20px 20px 20px 20px;
+	background-color: #efefef;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 10px;
+}
+#mini-cart h4 {
+	margin: -22px -21px 20px;
+    line-height: 30px;
+    font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	background-color: #FF6600;	
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 10px 10px 0 0;
+}
+#mini-cart a {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	background-color: #FF6600;
+  	text-decoration: none;  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 3px;
+	box-shadow: 1px 1px 3px #888888;
+  	padding: 6px 6px 6px 6px;
+}
+#mini-cart a:hover {
+	color: #fff;
+  	background: #333333;
+}
+#mini-cart p {
+	font-weight: bold;
+	text-align: left;
+	padding: 4px 5px 4px 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
+
+/*CATEGORIES*/
+#categories{
+	position: absolute;
+	top: 90px;
+	left: 10px;
+	width: 120px;
+	padding: 10px 10px 10px 10px;
+	border: 1px solid rgba(0,0,0,1);
+	border-radius: 10px;
+}
+#categories h4 {
+	margin: -12px -11px 10px;
+    line-height: 30px;
+    font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	background-color: #FF6600;	
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 10px 10px 0 0;
+}
+#categories a {
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ff6600;
+  	text-decoration: none;
+}
+#categories a:hover {
+	color: #ffffff;
+}
+
+
+
+
 /*MY PROFILE*/
 #myprofile {
 	background-color: #efefef;
@@ -672,6 +868,15 @@ nav ul ul ul {
   	box-shadow: 1px 1px 1px #cccccc;
   	resize: none;
 }
+.polja-drop {
+	width: 214px;
+	padding: 4px 6px 4px 6px;
+	margin: 3px 0px 5px 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 3px;
+  	box-shadow: 1px 1px 1px #cccccc;
+  	resize: none;
+}
 .polja-date {
 	width: 200px;
 	padding: 2px 6px 2px 6px;
@@ -680,6 +885,7 @@ nav ul ul ul {
   	border-radius: 3px;
   	box-shadow: 1px 1px 1px #cccccc;
 }
+
 .sendmail {
 	position: relative;
 	left: 200px;

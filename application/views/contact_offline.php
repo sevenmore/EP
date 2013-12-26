@@ -15,7 +15,7 @@
 		<nav>
 			<ul id="menu">
 				<li><?php echo anchor('index', 'Home'); ?></li>
-				<li><?php echo anchor('shop', 'Shop'); ?></li>
+				<li><?php echo anchor('shop_offline', 'Shop'); ?></li>
 				<li><?php echo anchor('aboutus_offline', 'About us'); ?></li>
 				<li><?php echo anchor('contact_offline', 'Contact'); ?></li>
 			</ul>

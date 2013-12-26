@@ -52,7 +52,7 @@
 		</nav>
 		
 		<section id="addseller">
-			<h2>Edit seller</h2>
+			<h2>Edit user</h2>
 			<?php echo form_open('edituser/save',array('class'=>'ovitek-seller')); ?>
 				<div>
 					<label class="control-label">Name:</label>									

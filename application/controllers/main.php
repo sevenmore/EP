@@ -5,6 +5,7 @@ class Main extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('users');
+		$this->load->model('items');
     } 
 	 
 	public function index(){
@@ -28,27 +29,17 @@ class Main extends CI_Controller {
 	}
 	
 	function proces(){		
-		/*$search = trim($this->input->post('searchbar'));
-		$query = $this->tasks->getTaskByName($search);
+		$search = trim($this->input->post('searchbar'));
+		$query = $this->items->getItemsByName($search);
 		$count = $query->num_rows();
 		  
 		if($count > 0) {
 			foreach($query->result() as $row){
-				//echo $row->name.': '.$row->priority.'<br/>';
-				//echo anchor('overview', $row->name.': '.$row->priority);
-				//echo '<br/>';
-				echo '<label>'.$row->name.': '.$row->priority.'</label>';
-				if($row->completed == 1){
-					echo ' - <span style="color:green; font-weight:bold;">DONE</span>';
-				}elseif(strtotime(date('Y-m-d')) > strtotime($row->deadline) && $row->completed == 0){
-					echo ' - <span style="color:red; font-weight:bold;">FAILED</span>';
-				}else{
-					echo ' - <span style="color:#FFCC00; font-weight:bold;">PENDING</span>';
-				}
+				echo '<label>'.$row->name.': '.$row->price.'&euro;</label>';
 				echo '<br/>';
 			}
-		}else {*/
+		}else {
 			echo "<label>No result found !</label>";
-		//}
+		}
 	}
 }

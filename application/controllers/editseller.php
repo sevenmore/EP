@@ -52,11 +52,7 @@ class Editseller extends CI_Controller {
 			
 			$this->db->where('user_id', $user_id);
 			$this->db->update('users', $userdata);
-			if($this->session->userdata('role')==1){
-				redirect('editsellers', 'refresh');
-			}else{
-				redirect('editusers', 'refresh');
-			}
+			redirect('editusers', 'refresh');
 		}
 		else{
 			$data['name']=$this->session->userdata('name');

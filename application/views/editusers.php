@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>SuperShop Add user</title>
+		<title>SuperShop Edit users</title>
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<meta name="description" content="" />
 		<meta name="author" content="Boco" />
@@ -24,7 +24,7 @@
 				<li><?php echo anchor('prodaja', 'Home'); ?></li>
 				<li><?php echo anchor('orders', 'Orders'); ?></li>
 				<li><?php echo anchor('editshop', 'Edit shop'); ?></li>
-				<li><?php echo anchor('editsellers', 'Edit sellers'); ?></li>
+				<li><?php echo anchor('editsellers', 'Edit users'); ?></li>
 			</ul>
 			<?php }else{ ?>
 			<ul id="menu">
@@ -89,7 +89,7 @@
 								echo '</td>';
 				
 								echo '<td class="action">';
-								echo form_open("editusers/delete");
+								echo form_open("editsellers/delete");
 								echo '<input type="image" class="edit-user" title="Delete" src="/photos/bin.png" width="24" height="24"/>';
 								echo '<input type="hidden" name="delete" value="'.$row->user_id.'" />';
 								echo form_close();
@@ -97,14 +97,14 @@
 								
 								if($row->active == 1){
 									echo '<td class="action">';
-									echo form_open("editusers/deactivate");
+									echo form_open("editsellers/deactivate");
 									echo '<input type="image" class="edit-user" title="Deactivate" src="/photos/deactivate.png" width="24" height="24"/>';
 									echo '<input type="hidden" name="deactivate" value="'.$row->user_id.'" />';
 									echo form_close();
 									echo '</td>';
 								}else{
 									echo '<td class="action">';
-									echo form_open("editusers/activate");
+									echo form_open("editsellers/activate");
 									echo '<input type="image" class="edit-user" title="Activate" src="/photos/activate.png" width="24" height="24"/>';
 									echo '<input type="hidden" name="activate" value="'.$row->user_id.'" />';
 									echo form_close();

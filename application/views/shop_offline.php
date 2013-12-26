@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script type="text/javascript" src="/js/search.js"></script>	
 	</head>
 
 	<body>
@@ -20,6 +21,31 @@
 				<li><?php echo anchor('contact_offline', 'Contact'); ?></li>
 			</ul>
 			<?php echo anchor('login', 'Login', 'class="login-offline"'); ?>
-		</nav>		
+		</nav>
+		
+		<section id="shop">
+			<h2>Shop</h2>
+			<?php
+				if($items){
+					foreach($items as $row){
+						if($row->active == 1){
+							echo '<div class="items">';
+							echo '<img src='.$row->photo.' alt='.$row->name.' width="150" height="150">';
+							echo '<h4>'.$row->name.'</h4>';
+							echo '<p>Category: '.$row->category.'</p>';
+							echo '<p>Price: '.$row->price.' &euro;</p>';	
+							echo '</div>';
+						}
+					}
+				}
+			?>
+		</section>
+		
+		<section id="categories">
+			<h4>Categories</h4>
+			<?php echo anchor('login', 'Running').'<br/>'; ?>
+			<?php echo anchor('login', 'Summer').'<br/>'; ?>
+			<?php echo anchor('login', 'Casual'); ?>
+		</section>		
 	</body>
 </html>
