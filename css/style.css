@@ -119,6 +119,7 @@ h6 {
 	margin-top: 20px;
 	margin-left: -30px;
 	background-color: #FF6600;
+	text-decoration: none;
 	
 	/*background-image: -moz-linear-gradient(top,#FF9900,#FF6600);
   	background-image: -webkit-linear-gradient(top,#FF9900,#FF6600);
@@ -140,6 +141,7 @@ h6 {
 	margin-top: 20px;
 	margin-left: -38px;
 	background-color: #FF6600;
+	text-decoration: none;
 	
 	/*background-image: -moz-linear-gradient(top,#FF9900,#FF6600);
   	background-image: -webkit-linear-gradient(top,#FF9900,#FF6600);
@@ -464,24 +466,7 @@ nav ul ul ul {
 	
 	position: relative;
 	top: 24px;
-	left: 150px;
-  	
-  	border: 1px solid rgba(0,0,0,0.3);
-  	border-radius: 5px;
-	box-shadow: 1px 1px 3px #888888;
-  	padding: 6px 12px 6px 12px;
-}
-.deleteitem {
-	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
-	color: #ffffff;
-	background-color: #FF6600;
-  	text-decoration: none;
-	
-	position: relative;
-	top: -10px;
-	left: 240px;
+	left: 220px;
   	
   	border: 1px solid rgba(0,0,0,0.3);
   	border-radius: 5px;
@@ -497,8 +482,8 @@ nav ul ul ul {
   	text-decoration: none;
 	
 	position: relative;
-	top: -44px;
-	left: 465px;
+	top: -10px;
+	left: 310px;
   	
   	border: 1px solid rgba(0,0,0,0.3);
   	border-radius: 5px;
@@ -507,12 +492,170 @@ nav ul ul ul {
 }
 .addcart:hover,
 .edititem:hover,
-.deleteitem:hover,
 .activeitem:hover {
 	color: #fff;
   	background: #333333;
 }
 
+
+
+
+
+/*CART*/
+#cart {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	position: relative;
+	left: 350px;
+	margin-top: 80px;
+	width: 600px;
+	padding-bottom: 10px;
+}
+#cart h2 {
+	text-align: center;
+}
+#cart hr {
+	color: #ff6600;
+	background-color: #ff6600;
+	height: 5px;
+}
+.naslov {
+	text-align: center;
+}
+
+
+
+
+
+
+/*CHECKOUT*/
+#checkout {
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	position: relative;
+	left: 350px;
+	margin-top: 80px;
+	width: 600px;
+	padding-bottom: 10px;
+}
+#checkout h2 {
+	text-align: center;
+}
+.checkoutitems{
+	border: 1px solid rgba(0,0,0,0.5);
+	border-radius: 3px;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	height: 100px;
+}
+.checkoutitems img {
+	float: left;
+}
+.checkoutitems h4 {
+	padding-left: 200px;
+}
+.checkoutitems p {
+	padding-left: 200px;
+}
+.accept{
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin-left: -80px;
+	margin-top: 20px;
+	background-color: #FF6600;
+	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.cancel{
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin-left: 10px;
+	margin-top: 20px;
+	background-color: #FF6600;
+	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.accept:hover,
+.cancel:hover {
+	color: #fff;
+  	background: #333333;
+}
+
+
+
+
+
+/*ORDERS*/
+.approveorder{
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	position: relative;
+	margin-left: 260px;
+	background-color: #FF6600;
+	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.rejectorder{
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	position: relative;
+	margin-left: 267px;
+	background-color: #FF6600;
+	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.cancelorder{
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	position: relative;
+	margin-left: 265px;
+	background-color: #FF6600;
+	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.approveorder:hover,
+.rejectorder:hover,
+.cancelorder:hover {
+	color: #fff;
+  	background: #333333;
+}
 
 
 
@@ -523,7 +666,7 @@ nav ul ul ul {
 	position: absolute;
 	top: 90px;
 	right: 15px;
-	width: 132px;
+	width: 140px;
 	padding: 20px 20px 20px 20px;
 	background-color: #efefef;
 	border: 1px solid rgba(0,0,0,0.2);
@@ -550,6 +693,7 @@ nav ul ul ul {
   	border-radius: 3px;
 	box-shadow: 1px 1px 3px #888888;
   	padding: 6px 6px 6px 6px;
+	margin-right: 6px;
 }
 #mini-cart a:hover {
 	color: #fff;
@@ -560,6 +704,25 @@ nav ul ul ul {
 	text-align: left;
 	padding: 4px 5px 4px 5px;
 	border: 1px solid rgba(0,0,0,0.3);
+}
+.previous{
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	position: absolute;
+	top: 230px;
+	left: 1172px;
+	background-color: #FF6600;
+	text-decoration: none;
+  	
+  	border: 1px solid rgba(0,0,0,0.3);
+  	border-radius: 5px;
+  	padding: 6px 12px 6px 12px;
+}
+.previous:hover {
+	color: #fff;
+  	background: #333333;
 }
 
 

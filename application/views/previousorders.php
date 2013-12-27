@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>SuperShop Shop</title>
+		<title>SuperShop Previous orders</title>
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<meta name="description" content="" />
 		<meta name="author" content="Boco" />
@@ -33,25 +33,33 @@
 			</div>	
 		</nav>
 		
-		<section id="shop">
-			<h2>Shop</h2>
+		<section id="cart">
+			<h2>Previous orders</h2>
 			<?php
-				if($items){
-					foreach($items as $row){
-						if($row->active == 1){
-							echo '<div class="items">';
-							echo '<img src='.$row->photo.' alt='.$row->name.' width="150" height="150">';
-							echo '<h4>'.$row->name.'</h4>';
-							echo '<p>Category: '.$row->category.'</p>';
-							echo '<p>Price: '.$row->price.' &euro;</p>';
-							
-							echo form_open("shop/add");
-							echo '<input type="submit" class="addcart" title="Add to cart" value="Add to cart"/>';
-							echo '<input type="hidden" name="item_id" value="'.$row->item_id.'" />';
-							echo form_close();
-									
+				if($previous_carts){
+					foreach($previous_carts as $row){
+						echo '<div class="naslov">';
+						echo '<strong>Order status: ';
+						if($row->status=='ready'){
+							echo '<span style="color: #ffbb00">waiting to be confirmed</span></strong>';
+						}elseif($row->status=='approved'){
+							echo '<span style="color: green">approved</span></strong>';
+						}elseif($row->status=='rejected'){
+							echo '<span style="color: red">rejected</span></strong>';
+						}else{
+							echo '<span style="color: red">canceled</span></strong>';
+						}
+						echo '</div>';
+						$cart_number=$this->cart_items->get_previous($row->cart_id);
+						foreach($cart_number as $cart){
+							echo '<div class="checkoutitems">';
+							echo '<img src='.$cart->photo.' alt='.$cart->name.' width="100" height="100">';
+							echo '<h4>'.$cart->name.'</h4>';
+							echo '<p>Category: '.$cart->category.'</p>';
+							echo '<p>Price: '.$cart->price.' &euro;</p>';								
 							echo '</div>';
 						}
+						echo '<hr/>';
 					}
 				}
 			?>

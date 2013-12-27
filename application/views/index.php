@@ -20,6 +20,18 @@
 				<li><?php echo anchor('contact_offline', 'Contact'); ?></li>
 			</ul>
 			<?php echo anchor('login', 'Login', 'class="login-offline"'); ?>
-		</nav>		
+		</nav>
+
+		<section>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<?php echo anchor('signup', 'Sign up','class="window-signup"'); ?>
+		<section>
 	</body>
 </html>

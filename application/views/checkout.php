@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>SuperShop Shop</title>
+		<title>SuperShop Checkout</title>
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<meta name="description" content="" />
 		<meta name="author" content="Boco" />
@@ -33,43 +33,24 @@
 			</div>	
 		</nav>
 		
-		<section id="shop">
-			<h2>Shop</h2>
+		<section id="checkout">
+			<h2>Check-out</h2>
 			<?php
-				if($items){
-					foreach($items as $row){
-						if($row->active == 1){
-							echo '<div class="items">';
-							echo '<img src='.$row->photo.' alt='.$row->name.' width="150" height="150">';
-							echo '<h4>'.$row->name.'</h4>';
-							echo '<p>Category: '.$row->category.'</p>';
-							echo '<p>Price: '.$row->price.' &euro;</p>';
-							
-							echo form_open("shop/add");
-							echo '<input type="submit" class="addcart" title="Add to cart" value="Add to cart"/>';
-							echo '<input type="hidden" name="item_id" value="'.$row->item_id.'" />';
-							echo form_close();
-									
-							echo '</div>';
-						}
+				if($cart_content){
+					foreach($cart_content as $row){
+						echo '<div class="checkoutitems">';
+						echo '<img src='.$row->photo.' alt='.$row->name.' width="100" height="100">';
+						echo '<h4>'.$row->name.'</h4>';
+						echo '<p>Category: '.$row->category.'</p>';
+						echo '<p>Price: '.$row->price.' &euro;</p>';								
+						echo '</div>';
 					}
 				}
+			echo '<p><strong>Total items: '.$cart_items.'</strong></p>';
+			echo '<p><strong>Total money: '.$cart_sum->price.' &euro;</strong></p>';;
+			echo anchor('checkout/accept', 'Accept','class="accept"');
+			echo anchor('cart', 'Cancel','class="cancel"');
 			?>
-		</section>
-		
-		<?php if($role == 0){ ?>
-		<section id="mini-cart">
-			<h4>Cart</h4>
-			<?php if($cart_sum->price){ ?>
-			<p>Total: <?php echo $cart_sum->price;?> &euro;</p>
-			<?php }else{ ?>
-			<p>Total:  0 &euro;</p>
-			<?php 
-			} 
-			echo anchor('cart', 'Cart');
-			echo anchor('checkout', 'Check out');
-			?>
-		</section>
-		<?php } ?>
+		</section>		
 	</body>
 </html>

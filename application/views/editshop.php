@@ -49,10 +49,10 @@
 						echo '<input type="hidden" hidden" name="item_id" value="'.$row->item_id.'" />';
 						echo form_close();
 						
-						echo form_open("editshop/delete");
-						echo '<input type="submit" class="deleteitem" title="Delete" value="Delete"/>';
-						echo '<input type="hidden" name="delete" value="'.$row->item_id.'" />';
-						echo form_close();
+						//echo form_open("editshop/delete");
+						//echo '<input type="submit" class="deleteitem" title="Delete" value="Delete"/>';
+						//echo '<input type="hidden" name="delete" value="'.$row->item_id.'" />';
+						//echo form_close();
 						
 						if($row->active == 1){
 							echo form_open("editshop/deactivate");

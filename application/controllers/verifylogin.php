@@ -56,11 +56,15 @@ class Verifylogin extends CI_Controller {
 		$password = $this->input->post('password');
 		$email = $this->input->post('email');
 		$result = $this->users->check_password($email,$password);
+		$active = $this->users->check_active($email);
 		$result_email = $this->users->email($email);
-		if(preg_match("/^[a-zA-Z0-9]{3,20}$/",$password) && $result){
+		if(preg_match("/^[a-zA-Z0-9]{3,20}$/",$password) && $result && $active==1){
 			return TRUE;
 		}elseif($result_email == 0){
 			return TRUE;
+		}elseif($active==0){
+			$this->form_validation->set_message('check_password', 'Your account has been disabled!');
+			return FALSE;
 		}else{
 			$this->form_validation->set_message('check_password', 'Wrong password!');
 			return FALSE;

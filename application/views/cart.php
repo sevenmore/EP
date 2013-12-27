@@ -33,26 +33,27 @@
 			</div>	
 		</nav>
 		
-		<section id="shop">
+		<section id="cart">
 			<h2>Cart content</h2>
 			<?php
 				if($cart_content){
 					foreach($cart_content as $row){
-						if($row->active == 1){
-							echo '<div class="items">';
-							echo '<img src='.$row->photo.' alt='.$row->name.' width="150" height="150">';
-							echo '<h4>'.$row->name.'</h4>';
-							echo '<p>Category: '.$row->category.'</p>';
-							echo '<p>Price: '.$row->price.' &euro;</p>';
-							
-							echo form_open("cart/remove");
-							echo '<input type="submit" class="addcart" title="Remove from cart" value="Remove"/>';
-							echo '<input type="hidden" hidden" name="item_id" value="'.$row->item_id.'" />';
-							echo form_close();
-									
-							echo '</div>';
-						}
+						echo '<div class="items">';
+						echo '<img src='.$row->photo.' alt='.$row->name.' width="150" height="150">';
+						echo '<h4>'.$row->name.'</h4>';
+						echo '<p>Category: '.$row->category.'</p>';
+						echo '<p>Price: '.$row->price.' &euro;</p>';
+						
+						echo form_open("cart/remove");
+						echo '<input type="submit" class="addcart" title="Remove from cart" value="Remove"/>';
+						echo '<input type="hidden" hidden" name="item_id" value="'.$row->item_id.'" />';
+						echo form_close();
+								
+						echo '</div>';
 					}
+				}
+				if($cart_items){
+					echo anchor('checkout', 'Check out','class="add-user"');
 				}
 			?>
 		</section>
@@ -60,11 +61,19 @@
 		<?php if($role == 0){ ?>
 		<section id="mini-cart">
 			<h4>Cart</h4>
+			<?php if($cart_sum->price){ ?>
 			<p>Total: <?php echo $cart_sum->price;?> &euro;</p>
-			<?php echo anchor('cart', 'Cart'); ?>
-			<?php echo anchor('checkout', 'Check out'); ?>
+			<?php }else{ ?>
+			<p>Total:  0 &euro;</p>
+			<?php 
+			} 
+			echo anchor('cart', 'Cart');
+			echo anchor('checkout', 'Check out');
+			?>
 		</section>
-		<?php } ?>
-		
+		<?php 
+		echo anchor('previousorders', 'View previous orders','class="previous"');
+		}
+		?>
 	</body>
 </html>

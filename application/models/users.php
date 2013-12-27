@@ -65,6 +65,15 @@ Class Users extends CI_Model {
 		return $query->num_rows();
 	}
 	
+	function check_active($email){
+		$this->db->select('active');
+		$this->db->from('users');
+		$this->db->where('email', $email);
+		
+		$query=$this->db->get();
+		return $query->row()->active;
+	}
+	
 	function get_role($email){
 		$this->db->select('role');
 		$this->db->from('users');

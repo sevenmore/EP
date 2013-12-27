@@ -5,6 +5,7 @@ class Editshop extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('items');
+		$this->load->model('cart_items');
     }
 	public function index(){
 		$data['items']=$this->items->getItems();
@@ -13,11 +14,12 @@ class Editshop extends CI_Controller {
 		$this->load->view('editshop',$data);
 	}
 	
-	function delete(){
-		$item_id = $this->input->post('delete');
-		$this->items->delete_item($item_id);
-	    redirect('editshop','refresh');
-	}
+	//function delete(){
+	//	$item_id = $this->input->post('delete');
+	//	$this->items->delete_item($item_id);
+	//	$this->cart_items->delete_item($item_id);
+	//    redirect('editshop','refresh');
+	//}
 	
 	function activate(){
 		$item_id = $this->input->post('activate');

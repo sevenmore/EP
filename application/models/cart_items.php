@@ -30,6 +30,16 @@ Class Cart_items extends CI_Model {
 		return $query->result();
 	}
 	
+	function get_previous($cart_id){
+		$this->db->select('items.name, items.category, items.price, items.photo');
+		$this->db->from('cart_items');
+		$this->db->where('cart_id',$cart_id);
+		$this->db->join('items','items.item_id = cart_items.item_id');
+
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
 	function delete_from_cart($cart_id,$item_id){
 		$this->db->where('cart_id', $cart_id);
 		$this->db->where('item_id', $item_id);
@@ -45,5 +55,10 @@ Class Cart_items extends CI_Model {
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
+	
+	//function delete_item($item_id){
+	//	$this->db->where('item_id', $item_id);
+	//  $this->db->delete('cart_items');
+	//}
 } 
 ?>

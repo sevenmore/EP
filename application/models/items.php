@@ -27,10 +27,10 @@ Class Items extends CI_Model {
 		return $query;
 	}
 	
-	function delete_item($item_id){
-		$this->db->where('item_id', $item_id);
-	    $this->db->delete('items');
-	}
+	//function delete_item($item_id){
+	//	$this->db->where('item_id', $item_id);
+	//  $this->db->delete('items');
+	//}
 	
 	function activate_item($item_id){
 		$this->db->where('item_id', $item_id);

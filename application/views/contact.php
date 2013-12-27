@@ -77,9 +77,15 @@
 		<?php if($role == 0){ ?>
 		<section id="mini-cart">
 			<h4>Cart</h4>
+			<?php if($cart_sum->price){ ?>
 			<p>Total: <?php echo $cart_sum->price;?> &euro;</p>
-			<?php echo anchor('cart', 'Cart'); ?>
-			<?php echo anchor('checkout', 'Check out'); ?>
+			<?php }else{ ?>
+			<p>Total:  0 &euro;</p>
+			<?php 
+			} 
+			echo anchor('cart', 'Cart');
+			echo anchor('checkout', 'Check out');
+			?>
 		</section>
 		<?php } ?>
 	</body>
