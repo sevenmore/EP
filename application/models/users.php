@@ -71,7 +71,11 @@ Class Users extends CI_Model {
 		$this->db->where('email', $email);
 		
 		$query=$this->db->get();
-		return $query->row()->active;
+		if($query->num_rows() > 0){
+			return $query->row()->active;
+		}else{
+			return FALSE;
+		}
 	}
 	
 	function get_role($email){
