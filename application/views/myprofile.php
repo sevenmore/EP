@@ -56,14 +56,25 @@
 			<h2>My profile</h2>
 			<img src="/photos/profile.png" alt="profile" width="64" height="64">
 			<div class="profile">
-				<p><strong>Name:</strong> <?php echo $name." ".$surname; ?></p>
-				<p><strong>Address:</strong> <?php echo $address; ?></p>
-				<p><strong>Post number:</strong> <?php echo $post.", ".$city; ?></p>
-				<p><strong>E-mail:</strong> <?php echo $email; ?></p>
-				<p><strong>Phone:</strong> <?php echo $phone; ?></p>
+				<?php if($role == 0){ ?>
+					<p><strong>Name:</strong> <?php echo $name." ".$surname; ?></p>
+					<p><strong>Address:</strong> <?php echo $address; ?></p>
+					<p><strong>Post number:</strong> <?php echo $post.", ".$city; ?></p>
+					<p><strong>E-mail:</strong> <?php echo $email; ?></p>
+					<p><strong>Phone:</strong> <?php echo $phone; ?></p>
+				<?php }else{?>
+					<p><strong>Name:</strong> <?php echo $name." ".$surname; ?></p>
+					<p><strong>E-mail:</strong> <?php echo $email; ?></p>
+				<?php }?>
 			</div>
-			<?php echo anchor('editprofile', 'Edit','class="edit-profile"'); ?>
-			<?php echo anchor('changepassword', 'Change password','class="edit-password"'); ?>					
+			<?php
+			if($role == 0){
+				echo anchor('editprofile', 'Edit','class="edit-profile"');
+				echo anchor('changepassword', 'Change password','class="edit-password"');
+			}else{
+				echo anchor('changepassword', 'Change password','class="edit-password"');
+			}
+			?>
 		</section>
 		
 		<?php if($role == 0){ ?>

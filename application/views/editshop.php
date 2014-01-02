@@ -18,7 +18,7 @@
 				<li><?php echo anchor('prodaja', 'Home'); ?></li>
 				<li><?php echo anchor('orders', 'Orders'); ?></li>
 				<li><?php echo anchor('editshop', 'Edit shop'); ?></li>
-				<li><?php echo anchor('editsellers', 'Edit sellers'); ?></li>
+				<li><?php echo anchor('editsellers', 'Edit users'); ?></li>
 			</ul>
 			<div id="search-bar">					
 				<img class="ikona" id="search" src="/photos/search.png" alt="search" width="24" height="24">

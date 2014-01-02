@@ -6,6 +6,7 @@ class Checkout extends CI_Controller {
 		parent::__construct();
 		$this->load->model('users');
 		$this->load->model('cart_items');
+		$this->load->model('carts');
     } 
 	 
 	public function index(){
@@ -42,6 +43,9 @@ class Checkout extends CI_Controller {
 			'status'=>'open'
 		);
 		$this->db->insert('carts', $userdata);
+		
+		$cart_id=$this->carts->get_current_cart($this->session->userdata('user_id'))->cart_id;
+		$this->session->set_userdata('cart_id', $cart_id);
 		
 		redirect('previousorders','refresh');
 	}

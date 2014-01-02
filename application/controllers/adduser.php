@@ -53,7 +53,11 @@ class Adduser extends CI_Controller {
 			);
 				
 			$this->db->insert('users', $userdata);
-			redirect('editusers', 'refresh');
+			if($this->session->userdata('role')==1){
+				redirect('editsellers', 'refresh');
+			}else{
+				redirect('editusers', 'refresh');
+			}
 		}
 		else{
 			$data['name']=$this->session->userdata('name');

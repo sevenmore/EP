@@ -38,7 +38,7 @@ class Verifysignup extends CI_Controller {
 				'phone'=>$phone,
 				'password'=>$password,
 				'role'=>0,
-				'active'=>1
+				'active'=>0
 				);
 			$this->db->insert('users', $userdata);
 			//$this->load->view('main');

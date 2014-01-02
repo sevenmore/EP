@@ -45,7 +45,7 @@ class Addseller extends CI_Controller {
 			);
 				
 			$this->db->insert('users', $userdata);
-			redirect('prodaja', 'refresh');
+			redirect('editusers', 'refresh');			
 		}
 		else{
 			$data['name']=$this->session->userdata('name');
