@@ -19,6 +19,7 @@
 				<li><?php echo anchor('aboutus_offline', 'About us'); ?></li>
 				<li><?php echo anchor('contact_offline', 'Contact'); ?></li>
 			</ul>
+                        <?php echo anchor('signup', 'Sign up','class="login-offline"'); ?>
 			<?php echo anchor('login', 'Login', 'class="login-offline"'); ?>
 		</nav>
 
@@ -31,7 +32,7 @@
 			<br/>
 			<br/>
 			<br/>
-			<?php echo anchor('signup', 'Sign up','class="window-signup"'); ?>
+			
 		<section>
 	</body>
 </html>
