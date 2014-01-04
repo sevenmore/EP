@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Zbirka podatkov: `ep2013`
 --
-CREATE DATABASE IF NOT EXISTS `ep2013` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `ep2013`;
+CREATE DATABASE IF NOT EXISTS `bcmr` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `bcmr`;
 
 -- --------------------------------------------------------
 

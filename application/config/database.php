@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'ep';
-$db['default']['database'] = 'ep2013';
+$db['default']['hostname'] = 'student-lem.fri.uni-lj.si';
+$db['default']['username'] = 'bcmr';
+$db['default']['password'] = '6ZbblvH8Cc';
+$db['default']['database'] = 'bcmr';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
