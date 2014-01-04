@@ -4,6 +4,8 @@ class Verifylogin extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl();
 		$this->load->model('users');
 	}
 
@@ -17,7 +19,6 @@ class Verifylogin extends CI_Controller {
 			$this->session->set_userdata('logged_in', 1);
 			$role=$this->users->get_role($email);
 			$this->session->set_userdata('role', $role);
-			
 			if($role==2){
 				redirect('adm', 'refresh');
 			}elseif($role==1){

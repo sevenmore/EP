@@ -4,11 +4,13 @@ class Additem extends CI_Controller {
 	 
 	function __construct() {
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl();
 		$this->load->model('items');
     } 
 	 
 	public function index(){
-		if($this->session->userdata('logged_in')) {
+		if($this->session->userdata('logged_in') && $this->session->userdata("role") == 1) {
 			$data['name']=$this->session->userdata('name');
 			$data['role']=$this->session->userdata('role');		
 			$this->load->view('additem',$data);

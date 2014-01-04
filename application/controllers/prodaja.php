@@ -4,19 +4,36 @@ class Prodaja extends CI_Controller {
 	 
 	function __construct() {
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl();
 		$this->load->model('users');
     } 
 	 
 	public function index(){
-		if($this->session->userdata('logged_in')) {
-			$user_id=$this->users->get_attributes($this->session->userdata('email'))->user_id;
-			$name=$this->users->get_attributes($this->session->userdata('email'))->name;
-			$this->session->set_userdata('user_id', $user_id);
-			$this->session->set_userdata('name', $name);
-			$data['name']=$this->session->userdata('name');
-			$this->load->view('prodaja',$data);
+		if($this->session->userdata('logged_in') && $this->session->userdata("role") == 1) {
+                    
+                    if (!isset($_SERVER['REDIRECT_SSL_CLIENT_CERT'])) redirect('index','refresh');
+
+                    $cert_data = openssl_x509_parse($_SERVER['REDIRECT_SSL_CLIENT_CERT']);
+
+                    $cert_o = $cert_data['subject']['O'];
+                    $cert_ou = $cert_data['subject']['OU'];
+                    $cert_cn = $cert_data['subject']['CN'];
+                    $cert_emailAddress = $cert_data['subject']['emailAddress'];
+
+                    $user_id=$this->users->get_attributes($this->session->userdata('email'))->user_id;
+                    $name=$this->users->get_attributes($this->session->userdata('email'))->name;
+                    $email=$this->users->get_attributes($this->session->userdata('email'))->email;
+
+                    if(!($cert_o == "SuperShop" && $cert_ou == "Prodaja" && $cert_emailAddress == $email && $cert_cn == $name))
+                        redirect('prodaja/logout','refresh');
+                    
+                    $this->session->set_userdata('user_id', $user_id);
+                    $this->session->set_userdata('name', $name);
+                    $data['name']=$this->session->userdata('name');
+                    $this->load->view('prodaja',$data);
 		}else{
-			redirect('index','refresh');
+                    redirect('index','refresh');
 		}
 	}
 	

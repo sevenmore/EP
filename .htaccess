@@ -1,1 +1,21 @@
-Deny from all
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    #RewriteCond %{HTTPS} =off
+    #RewriteCond %{REQUEST_URI} !^\/index$ [OR]
+    #RewriteCond %{REQUEST_URI} !^$
+    #RewriteRule (.*) https://%{HTTP_HOST}/$1 [L,R=301]
+
+    #RewriteCond %{HTTPS} =on
+    #RewriteCond %{REQUEST_URI} =/index [OR]
+    #RewriteCond %{REQUEST_URI} =/
+    #RewriteRule (.*) http://%{HTTP_HOST}/$1 [L,R=301]
+
+    #asd
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php/$1 [L]
+</IfModule>
+

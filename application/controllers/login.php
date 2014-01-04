@@ -7,6 +7,8 @@ class Login extends CI_Controller {
     } 
 	 
 	public function index(){
+                $this->load->helper('https');
+                use_ssl();
 		$this->load->view('login');
 	}
 }

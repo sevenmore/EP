@@ -4,6 +4,8 @@ class Shop_offline extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl(FALSE);
 		$this->load->model('items');
     }
 	public function index(){

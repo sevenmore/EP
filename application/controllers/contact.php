@@ -4,11 +4,13 @@ class Contact extends CI_Controller {
 	 
 	function __construct() {
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl();
 		$this->load->model('cart_items');
     } 
 	 
 	public function index(){
-		if($this->session->userdata('logged_in')) {
+		if($this->session->userdata('logged_in') && $this->session->userdata("role") == 0) {
 			$data['name']=$this->session->userdata('name');
 			$data['role']=$this->session->userdata('role');
 			$data['cart_items']=$this->cart_items->get_number_of_items($this->session->userdata('cart_id'));

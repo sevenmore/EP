@@ -4,6 +4,8 @@ class Index extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl(FALSE);
 		$this->load->model('items');
     }
 
@@ -25,6 +27,20 @@ class Index extends CI_Controller {
 	public function index(){
 		$data['items']=$this->items->getItems();
 		$this->load->view('index',$data);
+                if($this->session->userdata("user_id")){
+                    $role = $this->session->userdata("role");
+                    if($role == 2){
+                        $url = $_SERVER['SERVER_NAME'] . '/adm';
+                        redirect('https://' . $url, 'location', 301 );
+                    } else if($role == 1){
+                        $url = $_SERVER['SERVER_NAME'] . '/prodaja';
+                        redirect('https://' . $url, 'location', 301 );
+                    } else {
+                        $url = $_SERVER['SERVER_NAME'] . '/main';
+                        redirect('https://' . $url, 'location', 301 );
+                    }
+                    //redirect('main','refresh');
+                }
 	}
 }
 

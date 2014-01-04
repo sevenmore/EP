@@ -4,8 +4,8 @@
 		<meta charset="utf-8" />
 		<title>SuperShop Login</title>
 		<link href="../css/style.css" rel="stylesheet" type="text/css" />
-                <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+                <link rel="stylesheet" href="../css/jqery-ui.css"/>
+		<script src="../js/jquery-1.9.1.js"></script>
 		<meta name="description" content="" />
 		<meta name="author" content="Boco" />
 	</head>

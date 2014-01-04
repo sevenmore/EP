@@ -4,14 +4,20 @@ class Editshop extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl();
 		$this->load->model('items');
 		$this->load->model('cart_items');
     }
 	public function index(){
+            if($this->session->userdata('logged_in') && $this->session->userdata("role") == 1) {
 		$data['items']=$this->items->getItems();
 		$data['cart']=2;
 		$data['name']=$this->session->userdata('name');
 		$this->load->view('editshop',$data);
+            }else{
+                redirect('index','refresh');
+            }
 	}
 	
 	//function delete(){

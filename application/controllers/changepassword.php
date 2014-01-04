@@ -4,6 +4,8 @@ class Changepassword extends CI_Controller {
 	 
 	function __construct() {
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl();
 		$this->load->model('users');
 		$this->load->model('cart_items');
     } 

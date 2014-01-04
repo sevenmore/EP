@@ -4,6 +4,8 @@ class Signup extends CI_Controller {
 	 
 	function __construct() {
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl();
     } 
 	 
 	public function index()

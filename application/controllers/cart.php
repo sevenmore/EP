@@ -4,12 +4,14 @@ class Cart extends CI_Controller {
 	 
 	function __construct() {
 		parent::__construct();
+                $this->load->helper('https');
+                use_ssl();
 		$this->load->model('users');
 		$this->load->model('cart_items');
     } 
 	 
 	public function index(){
-		if($this->session->userdata('logged_in')) {
+		if($this->session->userdata('logged_in') && $this->session->userdata("role") == 0) {
 			$user_id=$this->users->get_attributes($this->session->userdata('email'))->user_id;
 			$name=$this->users->get_attributes($this->session->userdata('email'))->name;
 			$this->session->set_userdata('user_id', $user_id);
